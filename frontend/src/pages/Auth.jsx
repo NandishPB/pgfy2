@@ -57,7 +57,15 @@ export default function Auth() {
       await signin(email, password)
       navigate('/hotels')
     } catch (err) {
-      setError(err.response?.data?.error || 'Sign in failed')
+      // show server validation or auth errors
+      const data = err.response?.data
+      if (data) {
+        if (data.error) setError(data.error)
+        else if (data.errors && Array.isArray(data.errors)) setError(data.errors.map(e => e.msg).join(', '))
+        else setError(JSON.stringify(data))
+      } else {
+        setError('Sign in failed')
+      }
     }
   }
 
@@ -92,7 +100,14 @@ export default function Auth() {
       await signin(email, password)
       navigate('/hotels')
     } catch (err) {
-      setError(err.response?.data?.error || 'Sign up failed')
+      const data = err.response?.data
+      if (data) {
+        if (data.error) setError(data.error)
+        else if (data.errors && Array.isArray(data.errors)) setError(data.errors.map(e => e.msg).join(', '))
+        else setError(JSON.stringify(data))
+      } else {
+        setError('Sign up failed')
+      }
     }
   }
 

@@ -25,18 +25,10 @@ function Header() {
           <nav className="hidden md:flex items-center gap-4 text-sm text-gray-600">
             <Link to="/hotels" className="hover:text-brand">Hotels</Link>
             <Link to="/about" className="hover:text-brand">About</Link>
-            <Link to="/hotels" className="hover:text-brand">Offers</Link>
           </nav>
         </div>
 
         <div className="flex items-center gap-4">
-          <div className="hidden md:block">
-            <div className="flex items-center bg-gray-100 rounded-full px-3 py-2 w-80">
-              <input className="flex-1 bg-transparent outline-none text-sm" placeholder="Enter city or hotel" />
-              <button className="ml-2 bg-brand text-white px-3 py-1 rounded-full text-sm">Search</button>
-            </div>
-          </div>
-
           {user ? (
             <div className="flex items-center gap-3">
               <Link to="/bookings" className="text-sm text-gray-700 hover:text-brand">My Bookings</Link>
@@ -79,7 +71,6 @@ function Header() {
           <nav className="flex flex-col gap-3">
             <Link to="/hotels" onClick={() => setMobileOpen(false)} className="py-2 px-3 rounded hover:bg-gray-100">Hotels</Link>
             <Link to="/about" onClick={() => setMobileOpen(false)} className="py-2 px-3 rounded hover:bg-gray-100">About</Link>
-            <Link to="/hotels" onClick={() => setMobileOpen(false)} className="py-2 px-3 rounded hover:bg-gray-100">Offers</Link>
           </nav>
 
           <div className="mt-6 border-t pt-4">

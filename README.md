@@ -86,4 +86,3 @@ If you want, I can:
 
 ---
 
-If you'd like additional sections added to this README (API reference, deployment steps), tell me what you prefer and I'll update it.

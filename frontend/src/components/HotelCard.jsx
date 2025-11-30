@@ -1,11 +1,12 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import img1 from '../assets/img1.jpg'
 
 export default function HotelCard({ hotel }) {
   return (
     <Link to={`/hotels/${hotel.hotel_id}`} className="block">
       <div className="bg-white rounded-lg overflow-hidden card-shadow hover:shadow-md transition">
-        <div className="h-40 bg-gray-100 flex items-center justify-center text-gray-400">Image</div>
+        <img src={img1} alt={hotel.name} className="h-40 w-full object-cover bg-gray-100" />
         <div className="p-4">
           <div className="flex items-start justify-between">
             <div>
